@@ -21,7 +21,7 @@ async def on_message(message):
 
     # convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message) 
 
-    if message.startswith('//cash Retr0A'):
+    if message.content.startswith('//cash Retr0A'):
         await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
 
         # await message.channel.send(convertedMessage)
