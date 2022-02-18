@@ -22,7 +22,7 @@ async def on_message(message):
     convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message) 
 
     if message.content.startswith('//cash'):
-        if message.author.mention == accounts.account1.username:
+        if message.author.mention == accounts.account1.mention:
             await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
 
         await message.channel.send(convertedMessage)
