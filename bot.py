@@ -48,4 +48,4 @@ async def on_message(message):
       embed.set_footer(text="Information requested by: {}".format(message.author.display_name))
 
       await message.channel.send(embed=embed)
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('DISCORD_TOKEN'))
