@@ -5,10 +5,10 @@ class account():
     def __init__(self, username, mention):
         self.username = username
         self.mention = mention
-        self.money = 0
+        self.cash = 0
 
-    def addMoney(self, moneytoAdd):
-        self.money += moneytoAdd
+    def addMoney(self, cashtoAdd):
+        self.cash += cashtoAdd
 
 class account1(account):
     def __init__(self):
