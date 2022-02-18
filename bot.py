@@ -31,9 +31,9 @@ async def on_message(message):
         embed=discord.Embed(title="Currency Info", description="See your currency", color=0x95ff00)
         embed.set_thumbnail(url="https://static01.nyt.com/images/2018/08/26/business/26VIEW.illo/26VIEW.illo-videoSixteenByNineJumbo1600.jpg");
         
-        embed.add_field(name=f'{accountName}', description=f'`s cash is: {accountCash}$')
-        embed.add_field(name=f'{accountName}', description=f'`s mention text is: {accountMention}')
-        
+        embed.add_field(name=f'{accountName}', description=f'`s cash is: {accountCash}$', inline=False)
+        embed.add_field(name=f'{accountName}', description=f'`s mention text is: {accountMention}', inline=False)
+
         embed.set_footer(text="Information requested by: {}".format(message.author.display_name))
 
         await message.channel.send(embed=embed)
