@@ -1,12 +1,9 @@
-from discord.ext import commands
 import discord
 import os
 
 import accounts
 
 client = discord.Client()
-
-bot = commands.Bot(command_prefix='//')
 
 @client.event
 async def on_ready():
@@ -63,9 +60,5 @@ async def on_message(message):
       embed.set_footer(text="Information requested by: {}".format(message.author.display_name))
 
       await message.channel.send(embed=embed)
-
-@bot.command()
-async def configcash(ctx, name):
-    await ctx.send(name)
 
 client.run(os.getenv('DISCORD_TOKEN'))
