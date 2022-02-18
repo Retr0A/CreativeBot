@@ -19,13 +19,12 @@ async def on_message(message):
         while 1 == 1:
           await message.channel.send("@Bubble Clan | xxx")
 
-    convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message) 
+    # convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message) 
 
-    if message.content.startswith('//cash'):
-        if message.startswith('//cash Retr0A'):
-            await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
+    if message.startswith('//cash Retr0A'):
+        await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
 
-        await message.channel.send(convertedMessage)
+        # await message.channel.send(convertedMessage)
       
     if message.content.startswith('//rob'):
         await message.channel.send("You robbed somone :)")
