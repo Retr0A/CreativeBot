@@ -26,28 +26,19 @@ async def on_message(message):
 
         accountName = accounts.account1.username
         accountCash = accounts.account1.cash
-        accountMention = accounts.account1.mention
 
-        embed=discord.Embed(title="Currency Info", description="See your currency", color=0x95ff00)
-        embed.set_thumbnail(url="https://static01.nyt.com/images/2018/08/26/business/26VIEW.illo/26VIEW.illo-videoSixteenByNineJumbo1600.jpg");
-        
-        embed.add_field(name=f'{accountName}', description=f'`s cash is: {accountCash}$', inline=False)
-        embed.add_field(name=f'{accountName}', description=f'`s mention text is: {accountMention}', inline=False)
-
-        embed.set_footer(text="Information requested by: {}".format(message.author.display_name))
-
-        await message.channel.send(embed=embed)
+        await message.channel.send(f'{accountName}`s cash is: {accountCash}')
 
         # await message.channel.send(convertedMessage)
 
     if message.content.startswith('//addMoneyDebug'):
-        accounts.account1.addCash(1);
+        accounts.account1.addCash(10);
 
     if message.content.startswith('//rob'):
         await message.channel.send("You robbed somone :)")
 
     if message.content.startswith('//help'):
-      embed=discord.Embed(title="Help Command", description="The prefix of CreativeBot is $.", color=0x00FF85)
+      embed=discord.Embed(title="Help Command", description="The prefix of CreativeBot is //.", color=0x00FF85)
       embed.set_thumbnail(url="https://www.memesmonkey.com/images/memesmonkey/6f/6fa2b13f83413c7294eab3060e054573.jpeg");
       
       embed.add_field(name="Cash", value="-cash - See your current cash.\n-rob - Rob someone(Legal).", inline=False)
