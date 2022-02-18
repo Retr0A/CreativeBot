@@ -10,8 +10,4 @@ class Account():
     def addCash(self, cashtoAdd):
         self.cash += cashtoAdd
 
-class Account1(Account):
-    def __init__(self):
-        Account.__init__(self, 'Retr0A', '@Retr0A-Server Dev')
-
-account1 = Account1()
+account1 = Account('Retr0A', '@Retr0A-Server Dev')
