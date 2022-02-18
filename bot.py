@@ -33,6 +33,8 @@ async def on_message(message):
         
         embed.add_field(name=f'{accountName}', description=f'`s cash is: {accountCash}$')
         embed.add_field(name=f'{accountName}', description=f'`s mention text is: {accountMention}')
+        
+        embed.set_footer(text="Information requested by: {}".format(message.author.display_name))
 
         await message.channel.send(embed=embed)
 
