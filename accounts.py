@@ -7,7 +7,7 @@ class Account():
         self.mention = mention
         self.cash = 0
 
-    def addMoney(self, cashtoAdd):
+    def addCash(self, cashtoAdd):
         self.cash += cashtoAdd
 
 class Account1(Account):
