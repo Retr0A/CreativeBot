@@ -24,7 +24,10 @@ async def on_message(message):
     if message.content.startswith('//cash Retr0A'):
         #await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
 
-        await message.channel.send('testing')
+        accountName = accounts.account1.username
+        accountCash = accounts.account1.cash
+
+        await message.channel.send('{accountName}`s cash is: {accountCash}')
 
         # await message.channel.send(convertedMessage)
       
