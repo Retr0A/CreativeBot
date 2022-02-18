@@ -31,7 +31,7 @@ async def on_message(message):
 
         # await message.channel.send(convertedMessage)
 
-    if message.content.startswith('addMoneyDebug'):
+    if message.content.startswith('//addMoneyDebug'):
         accounts.account1.addCash(10);
 
     if message.content.startswith('//rob'):
