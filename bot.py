@@ -27,7 +27,7 @@ async def on_message(message):
         accountName = accounts.account1.username
         accountCash = accounts.account1.cash
 
-        await message.channel.send(f'{accountName}`s cash is: {accountCash}')
+        await message.channel.send(f'{accountName}`s cash is: ***{accountCash}***')
 
         # await message.channel.send(convertedMessage)
 
