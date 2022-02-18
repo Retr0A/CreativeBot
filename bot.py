@@ -26,13 +26,20 @@ async def on_message(message):
 
         accountName = accounts.account1.username
         accountCash = accounts.account1.cash
+        accountMention = accounts.account1.mention
 
-        await message.channel.send(f'{accountName}`s cash is: {accountCash}')
+        embed=discord.Embed(title="Currency Info", description="See your currency", color=0x95ff00)
+        embed.set_thumbnail(url="https://static01.nyt.com/images/2018/08/26/business/26VIEW.illo/26VIEW.illo-videoSixteenByNineJumbo1600.jpg");
+        
+        embed.add_field(name=f'{accountName}', description=f'`s cash is: {accountCash}$')
+        embed.add_field(name=f'{accountName}', description=f'`s mention text is: {accountMention}')
+
+        await message.channel.send(embed=embed)
 
         # await message.channel.send(convertedMessage)
 
     if message.content.startswith('//addMoneyDebug'):
-        accounts.account1.addCash(10);
+        accounts.account1.addCash(1);
 
     if message.content.startswith('//rob'):
         await message.channel.send("You robbed somone :)")
