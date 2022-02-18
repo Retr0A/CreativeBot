@@ -1,9 +1,12 @@
+from discord.ext import commands
 import discord
 import os
 
 import accounts
 
 client = discord.Client()
+
+bot = commands.Bot(command_prefix='//')
 
 @client.event
 async def on_ready():
@@ -19,7 +22,7 @@ async def on_message(message):
         while 1 == 1:
           await message.channel.send("@Bubble Clan | xxx")
 
-    # convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message) 
+    # convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
 
     if message.content.startswith('//cash Retr0A'):
         #await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
@@ -60,4 +63,9 @@ async def on_message(message):
       embed.set_footer(text="Information requested by: {}".format(message.author.display_name))
 
       await message.channel.send(embed=embed)
+
+@bot.command()
+async def configcash(ctx, name):
+    await ctx.send(name)
+
 client.run(os.getenv('DISCORD_TOKEN'))
