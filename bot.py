@@ -1,10 +1,63 @@
-
+from random import random
 import discord
+from discord.ext import commands
+import json
 import os
+import random
 
-import accounts
+os.chdir("C:\\Users\\Bratl\\Github\\CreativeBot")
 
 client = discord.Client()
+
+@client.command()
+async def balance(ctx):
+    await open_account(ctx.author)
+    user = ctx.author
+    users = await get_bank_data()
+
+    wallet_amt = users[str(user.id)]["wallet"]
+    bank_amt = users[str(user.id)]["bank"]
+
+    em = discord.Embed(title = f"{ctx.author.name}'s balance", color = discord.Color.green())
+    em.add_field(name = "Wallet balance", value = wallet_amt)
+    em.add_field(name = "Bank balance", value = bank_amt)
+    await ctx.send(embed = em)
+
+@client.command()
+async def beg(ctx):
+    await open_account(ctx.author)
+
+    users = await get_bank_data()
+    user = ctx.author
+
+    earnings = random.randrange(101)
+
+    await ctx.send(f"Someone gave you {earnings} coins!!")
+
+    users[str(user.id)]["wallet"] += earnings
+
+    with open("mainbank.json", "w") as f:
+        json.dump(users, f)
+
+async def open_account (user):
+    users = await get_bank_data()
+
+    if str(user.id) in users:
+        return False
+    else:
+        users[str(user.id)] = {}
+        users[str(user.id)]["wallet"] = 0
+        users[str(user.id)]["bank"] = 0
+
+    with open("bank.json", "w") as f:
+        json.dump(users, f)
+    return True
+
+async def get_bank_data():
+    with open("mainbank.json", "r") as f:
+        users = json.load(f)
+
+    return users
 
 @client.event
 async def on_ready():
@@ -15,34 +68,34 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('//spam'):
+    #if message.content.startswith('//spam'):
 
-        while 1 == 1:
-          await message.channel.send("@Bubble Clan | xxx")
+        #while 1 == 1:
+          #await message.channel.send("@Bubble Clan | xxx")
 
     # convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
 
-    if message.content.startswith('//cash Retr0A'):
+    #if message.content.startswith('//cash Retr0A'):
         #await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
 
-        accountName = accounts.account1.username
-        accountCash = accounts.account1.cash
+        #accountName = accounts.account1.username
+        #accountCash = accounts.account1.cash
 
-        await message.channel.send(f'{accountName}`s cash is: ***{accountCash}***')
+        #await message.channel.send(f'{accountName}`s cash is: ***{accountCash}***')
 
         # await message.channel.send(convertedMessage)
 
-    if message.content.startswith('//addMoneyDebug'):
-        accounts.account1.addCash(10);
+    #if message.content.startswith('//addMoneyDebug'):
+        #accounts.account1.addCash(10);
 
-    if message.content.startswith('//rob'):
-        await message.channel.send("You robbed somone :)")
+    #if message.content.startswith('//rob'):
+        #await message.channel.send("You robbed somone :)")
 
     if message.content.startswith('//help'):
       embed=discord.Embed(title="Help Command", description="The prefix of CreativeBot is //.", color=0x00FF85)
       embed.set_thumbnail(url="https://www.memesmonkey.com/images/memesmonkey/6f/6fa2b13f83413c7294eab3060e054573.jpeg");
       
-      embed.add_field(name="Cash", value="-cash - See your current cash.\n-rob - Rob someone(Legal).", inline=False)
+      #embed.add_field(name="Cash", value="-cash - See your current cash.\n-rob - Rob someone(Legal).", inline=False)
 
       embed.add_field(name="Fun", value="-fuckyou - DON`T TRY THIS!", inline=False)
 
