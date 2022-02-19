@@ -5,7 +5,7 @@ import json
 import os
 import random
 
-os.chdir("C:\\Users\\Bratl\\Github\\CreativeBot")
+#os.chdir("C:\\Users\\Bratl\\Github\\CreativeBot")
 
 client = discord.Client()
 client = commands.Bot(command_prefix = "//")
