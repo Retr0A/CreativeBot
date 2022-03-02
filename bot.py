@@ -110,16 +110,15 @@ async def on_message(message):
       embed=discord.Embed(title="RULES Command", description="The rules are very important to know.", color=0xc80000)
       embed.set_thumbnail(url="https://th.bing.com/th/id/R.1931ea674c875a53c30ec59b598b9ed3?rik=4ZKzGXf4B1NTmg&riu=http%3a%2f%2fimages.memes.com%2fmeme%2f664153&ehk=kmWqbWmpDHNPIlLt65RF1ShWgbn%2blZ9NjDZIYA1VRho%3d&risl=&pid=ImgRaw&r=0");
       
-      embed.add_field(name="RULES", value="1.No NSFW, warn if you post something nsfw!\n\n" +
+      embed.add_field(name="Main Rules", value="1.No NSFW, warn if you post something nsfw!\n\n" +
       "2.No bullying, this counts as hate to another person and cyberbullying.\n\n" +
       "3.No racism and dark jokes, they aren't funny guys.\n\n" +
       "4.No spamming, don't spam in any of the channels.\n\n" +
       "5.No begging for roles, don't beg for roles.\n\n" +
       "6.Have kindness and respect to other people.\n\n" +
-      "7.Have a fun time!\n\n\n" +
+      "7.Have a fun time!\n\n\n")
       
-      "- Rules In #counting🔢 \n\n" +
-      "1. Cant send two msgs one after another.\n\n" +
+      embed.add_field(name="Rules In #counting🔢", value="1. Cant send two msgs one after another.\n\n" +
       "2. Don't spam.",
       inline=False)
 
