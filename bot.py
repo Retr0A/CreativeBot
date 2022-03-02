@@ -118,7 +118,7 @@ async def on_message(message):
       "6.Have kindness and respect to other people.\n\n" +
       "7.Have a fun time!\n\n\n" +
       
-      "- Rules In #<947244357944246302>\n\n" +
+      "- Rules In #counting🔢 \n\n" +
       "1. Cant send two msgs one after another.\n\n" +
       "2. Don't spam.",
       inline=False)
