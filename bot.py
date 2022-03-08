@@ -72,7 +72,7 @@ async def on_message(message):
     if message.content.startswith('//spam'):
 
         while 1 == 1:
-          await message.channel.send("@Bubble Clan | xxx")
+          await message.channel.send("{0.author.mention}".format(message))
 
     convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
 
