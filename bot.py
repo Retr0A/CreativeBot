@@ -69,12 +69,12 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    #if message.content.startswith('//spam'):
+    if message.content.startswith('//spam'):
 
-        #while 1 == 1:
-          #await message.channel.send("@Bubble Clan | xxx")
+        while 1 == 1:
+          await message.channel.send("@Bubble Clan | xxx")
 
-    # convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
+    convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
 
     #if message.content.startswith('//cash Retr0A'):
         #await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
