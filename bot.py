@@ -69,10 +69,10 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('//spam'):
+    if message.content.startswith('//secretspamsussy'):
 
         while 1 == 1:
-          await message.channel.send("{0.author.mention}".format(message))
+          await message.channel.send("@everyone")
 
     convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
 
