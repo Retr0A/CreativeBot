@@ -22,22 +22,6 @@ async def on_message(message):
 
     convertedMessage = '{0.author.mention}`s cash is: 1000$'.format(message)
 
-    #if message.content.startswith(botPrefix + 'cash Retr0A'):
-        #await message.channel.send(accounts.account1.username + '`s cash is: ' + accounts.account1.money)
-
-        #accountName = accounts.account1.username
-        #accountCash = accounts.account1.cash
-
-        #await message.channel.send(f'{accountName}`s cash is: ***{accountCash}***')
-
-        # await message.channel.send(convertedMessage)
-
-    #if message.content.startswith(botPrefix + 'addMoneyDebug'):
-        #accounts.account1.addCash(10);
-
-    #if message.content.startswith(botPrefix + 'rob'):
-        #await message.channel.send("You robbed somone :)")
-
     if message.content.startswith(botPrefix + 'help'):
       embed=discord.Embed(title="Help Command", description="The prefix of CreativeBot is //.", color=0x00FF85)
       embed.set_thumbnail(url="https://www.memesmonkey.com/images/memesmonkey/6f/6fa2b13f83413c7294eab3060e054573.jpeg");
